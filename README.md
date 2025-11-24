@@ -119,7 +119,7 @@ If you host the model somewhere (Google Drive / Dropbox / private server), downl
 mkdir -p app/models/bert_base_uncased
 wget -O model.zip "https://example.com/your-model.zip"
 unzip model.zip -d app/models/bert_base_uncased
-
+```
 
 
 ## 🙋 Author
