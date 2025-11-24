@@ -122,7 +122,7 @@ unzip model.zip -d app/models/bert_base_uncased
 ```
 
 
-## 🙋 Author
+##  Author
 
 **Hossein Khosravi**
 
