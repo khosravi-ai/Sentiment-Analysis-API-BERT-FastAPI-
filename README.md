@@ -121,6 +121,33 @@ wget -O model.zip "https://example.com/your-model.zip"
 unzip model.zip -d app/models/bert_base_uncased
 ```
 
+# Persian & English Sentiment Analysis API
+
+Fast and accurate sentiment analysis for Persian and English text using BERT + FastAPI.
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/hossein3754/sentiment-api?style=flat-square&logo=docker&color=2496ED)](https://hub.docker.com/r/hossein3754/sentiment-api)
+[![Image Size](https://img.shields.io/docker/image-size/hossein3754/sentiment-api/latest?style=flat-square)](https://hub.docker.com/r/hossein3754/sentiment-api)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+## Run with a single command (recommended)
+
+```bash
+docker run -p 8000:8000 hossein3754/sentiment-api:latest
+
+→ After download (~1.6 GB, only once) open:
+http://localhost:8000/docs
+Run with GPU (NVIDIA – blazing fast)
+
+docker run --gpus all -p 8000:8000 hossein3754/sentiment-api:latest
+
+Developer setup
+
+git clone https://github.com/hossein3754/Sentiment-Analysis-API.git
+cd Sentiment-Analysis-API
+docker build -t sentiment-api .
+docker run -p 8000:8000 -v ${PWD}:/app sentiment-api
+
+Docker Hub → https://hub.docker.com/r/hossein3754/sentiment-api
 
 ##  Author
 

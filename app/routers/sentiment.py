@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.models.bert_base_uncased import model, tokenizer, device
+from app.models.bert_base_uncased import model, tokenizer
 import torch
 from app.schemas.predict import TextOutput
 import torch.nn.functional as F
@@ -24,7 +24,7 @@ async def sentiment(text: str):
         max_length=512,
         padding=True,
         return_tensors="pt",
-    ).to(device)
+    )
 
     with torch.no_grad():
         outputs = model(**input_token)

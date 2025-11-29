@@ -1,13 +1,16 @@
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
-import torch
+# import torch
 
-local_path = r"C:\Users\HOSEIN\PycharmProjects\Sentiment-Analysis-AP\app\models\bert_base_uncased"
-model = AutoModelForSequenceClassification.from_pretrained(local_path,
-                                                           num_labels=5,
-                                                           local_files_only=True)
+# local_path = r"C:\Users\HOSEIN\PycharmProjects\Sentiment-Analysis-AP\app\models\bert_base_uncased"
+# model = AutoModelForSequenceClassification.from_pretrained(local_path,
+#                                                            num_labels=5,
+#                                                            local_files_only=True)
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model.to(device)
-model.eval()
+model_name = "nlptown/bert-base-multilingual-uncased-sentiment"
 
-tokenizer = AutoTokenizer.from_pretrained(local_path, local_files_only=True)
+model = AutoModelForSequenceClassification.from_pretrained(model_name,
+                                                            num_labels=5,
+                                                           torch_dtype="auto",
+                                                           device_map="auto")
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
