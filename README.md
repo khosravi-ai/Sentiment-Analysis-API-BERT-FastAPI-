@@ -133,19 +133,24 @@ Fast and accurate sentiment analysis for Persian and English text using BERT + F
 
 ```bash
 docker run -p 8000:8000 hossein3754/sentiment-api:latest
+```
 
 → After download (~1.6 GB, only once) open:
 http://localhost:8000/docs
 Run with GPU (NVIDIA – blazing fast)
 
+```bash
 docker run --gpus all -p 8000:8000 hossein3754/sentiment-api:latest
+```
 
-Developer setup
+**Developer setup**
 
+```bash
 git clone https://github.com/hossein3754/Sentiment-Analysis-API.git
 cd Sentiment-Analysis-API
 docker build -t sentiment-api .
 docker run -p 8000:8000 -v ${PWD}:/app sentiment-api
+```
 
 Docker Hub → https://hub.docker.com/r/hossein3754/sentiment-api
 
